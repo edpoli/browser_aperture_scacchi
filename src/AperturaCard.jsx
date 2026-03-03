@@ -35,7 +35,7 @@ function AperturaCard({ apertura, isPreferita, onTogglePreferito }) {
             {mostraScacchiera && (
                 <div className="mt-4">
 
-                    <div className="w-full max-w-[280px]">
+                    <div className="w-full max-w-70">
                         <Scacchiera fen={calcolaFen(mossaCorrente)} />
                     </div>
 
