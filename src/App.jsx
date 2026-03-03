@@ -26,12 +26,12 @@ function App() {
   })
 
   return (
-    <div className="min-h-screen bg-gray-100 px-4 py-12">
+    <div className="min-h-screen bg-stone-900 px-4 py-12">
       <div className="max-w-3xl mx-auto">
 
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800">
+          <h1 className="text-3xl font-bold text-slate-100">
             ♟️ Explorer Aperture
           </h1>
           <button
@@ -52,12 +52,14 @@ function App() {
           value={ricerca}
           onChange={(e) => setRicerca(e.target.value)}
           placeholder="Cerca un'apertura..."
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 outline-none focus:border-blue-500 mb-4"
+          className="w-full px-4 py-2 rounded-lg border text-amber-300 border-gray-300 outline-none focus:border-blue-500 mb-4"
         />
 
         {/* Filtri */}
         <div className="flex gap-6 mb-6">
+
           <div className="flex gap-2">
+            <p className=' text-white'>  Colore:</p>
             {['tutti', 'bianco', 'nero'].map((c) => (
               <button
                 key={c}
@@ -73,13 +75,14 @@ function App() {
             ))}
           </div>
           <div className="flex gap-2">
+            <p className=' text-white'>  Difficoltà:  </p>
             {['tutti', 'principiante', 'intermedio', 'avanzato'].map((d) => (
               <button
                 key={d}
                 onClick={() => setDifficolta(d)}
                 className={`px-3 py-1 rounded-full text-sm border transition-colors
                   ${difficolta === d
-                    ? 'bg-blue-500 text-white border-blue-500'
+                    ? 'bg-orange-500 text-white border-orange-500'
                     : 'bg-white text-gray-500 border-gray-300 hover:border-blue-400'
                   }`}
               >

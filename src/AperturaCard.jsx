@@ -20,7 +20,7 @@ function AperturaCard({ apertura, isPreferita, onTogglePreferito }) {
     }
 
     return (
-        <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="bg-taupe-200 rounded-xl border border-gray-200 p-5">
 
             <div className="flex justify-between items-start mb-2">
                 <h2 className="text-lg font-semibold text-gray-800">{apertura.nome}</h2>
