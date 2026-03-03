@@ -35,10 +35,12 @@ function AperturaCard({ apertura, isPreferita, onTogglePreferito }) {
             {mostraScacchiera && (
                 <div className="mt-4">
 
-                    <Scacchiera fen={calcolaFen(mossaCorrente)} />
+                    <div className="w-full max-w-[280px]">
+                        <Scacchiera fen={calcolaFen(mossaCorrente)} />
+                    </div>
 
                     {/* Controlli */}
-                    <div className="flex items-center gap-3 mt-3">
+                    <div className="flex items-center gap-3 mt- flex-wrap3">
                         <button
                             onClick={() => setMossaCorrente(m => Math.max(0, m - 1))}
                             disabled={mossaCorrente === 0}
@@ -47,7 +49,7 @@ function AperturaCard({ apertura, isPreferita, onTogglePreferito }) {
                             ←
                         </button>
 
-                        <div className="flex gap-1">
+                        <div className="flex flex-wrap gap-1 flex-1">
                             {mosse.map((mossa, index) => (
                                 <button
                                     key={index}

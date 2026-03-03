@@ -56,9 +56,9 @@ function App() {
         />
 
         {/* Filtri */}
-        <div className="flex gap-6 mb-6">
+        <div className="flex flex-col gap-6 mb-6">
 
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <p className=' text-white'>  Colore:</p>
             {['tutti', 'bianco', 'nero'].map((c) => (
               <button
@@ -74,7 +74,7 @@ function App() {
               </button>
             ))}
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <p className=' text-white'>  Difficoltà:  </p>
             {['tutti', 'principiante', 'intermedio', 'avanzato'].map((d) => (
               <button

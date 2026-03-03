@@ -11,7 +11,7 @@ function Scacchiera({ fen }) {
     const board = chess.board() // array 8x8 di pezzi
 
     return (
-        <div className="inline-block border-2 border-gray-400">
+        <div className="inline-block border-2 border-gray-400 w-full">
             {board.map((riga, rigaIndex) => (
                 <div key={rigaIndex} className="flex">
                     {riga.map((casa, colonnaIndex) => {
@@ -21,7 +21,7 @@ function Scacchiera({ fen }) {
                         return (
                             <div
                                 key={colonnaIndex}
-                                className={`w-8 h-8 flex items-center justify-center text-xl select-none
+                                className={`w-8 h-8 flex-1 flex items-center justify-center text-xl select-none
                   ${casaChiara ? 'bg-amber-100' : 'bg-amber-700'}`}
                             >
                                 {pezzo}
