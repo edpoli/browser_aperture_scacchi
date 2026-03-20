@@ -26,6 +26,7 @@ Explorer Aperture è una single-page application che permette di esplorare le pr
 | **chess.js** | Logica scacchistica e calcolo posizioni FEN |
 | **Tailwind CSS 4** | Styling utility-first |
 | **Vite 7** | Build tool e dev server |
+| **Typescript** | Type safety e manutenibilità
 
 ## Struttura del Progetto
 
