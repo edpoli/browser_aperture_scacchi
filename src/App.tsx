@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import aperture from './aperture'
+import aperture, { Apertura } from './aperture'
 import AperturaCard from './AperturaCard' // ← nuovo
 
 function App() {
-  const [preferiti, setPreferiti] = useState([])
-  const [ricerca, setRicerca] = useState('')
-  const [colore, setColore] = useState('tutti')
-  const [difficolta, setDifficolta] = useState('tutti')
+  const [preferiti, setPreferiti] = useState <number[]>([])
+  const [ricerca, setRicerca] = useState ('')
+  const [colore, setColore] = useState< "bianco" | "nero" | "tutti"> ('tutti')
+  const [difficolta, setDifficolta] = useState <"principiante" | "intermedio" | "avanzato"|"tutti"> ('tutti')
   const [mostraPreferiti, setMostraPreferiti] = useState(false)
 
-  function togglePreferito(id) {
+  function togglePreferito(id:number) {
     if (preferiti.includes(id)) {
       setPreferiti(preferiti.filter((p) => p !== id))
     } else {
@@ -60,7 +60,7 @@ function App() {
 
           <div className="flex flex-wrap gap-2">
             <p className=' text-white'>  Colore:</p>
-            {['tutti', 'bianco', 'nero'].map((c) => (
+            {(['tutti', 'bianco', 'nero'] as const).map((c) => (
               <button
                 key={c}
                 onClick={() => setColore(c)}
@@ -76,7 +76,7 @@ function App() {
           </div>
           <div className="flex flex-wrap gap-2">
             <p className=' text-white'>  Difficoltà:  </p>
-            {['tutti', 'principiante', 'intermedio', 'avanzato'].map((d) => (
+            {(['tutti', 'principiante', 'intermedio', 'avanzato']as const).map((d) => (
               <button
                 key={d}
                 onClick={() => setDifficolta(d)}

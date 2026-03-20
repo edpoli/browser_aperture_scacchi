@@ -1,4 +1,20 @@
-const aperture = [
+
+
+export interface Apertura {
+
+id: number
+nome: string
+mosse: string
+mossePgn: string
+colore: "bianco" | "nero"
+difficolta: "principiante" | "intermedio" | "avanzato"
+descrizione: string
+
+
+}
+
+
+const aperture : Apertura[] = [
   {
     id: 1,
     nome: "Apertura Italiana",

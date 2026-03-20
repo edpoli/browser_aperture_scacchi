@@ -1,16 +1,27 @@
 import { useState } from 'react'
 import { Chess } from 'chess.js'
 import Scacchiera from './Scacchiera'
+import { Apertura } from './aperture'
 
-function AperturaCard({ apertura, isPreferita, onTogglePreferito }) {
+
+interface AperturaCardProps {
+
+apertura: Apertura
+isPreferita: boolean
+onTogglePreferito: (id: number) => void
+
+
+}
+
+function AperturaCard({apertura, isPreferita, onTogglePreferito }: AperturaCardProps) {
     const [mostraScacchiera, setMostraScacchiera] = useState(false)
     const [mossaCorrente, setMossaCorrente] = useState(0)
 
     const mosse = apertura.mossePgn.split(' ')
 
-    function calcolaFen(fino) {
+    function calcolaFen(fino:number) {
         const chess = new Chess()
-        mosse.slice(0, fino).forEach((mossa) => chess.move(mossa))
+        mosse.slice(0, fino).forEach((mossa:string) => chess.move(mossa))
         return chess.fen()
     }
 

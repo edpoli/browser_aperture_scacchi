@@ -1,12 +1,17 @@
 import { Chess } from 'chess.js'
 
+ interface ScacchieraProps {
+
+    fen: string
+}
+
 // Pezzi in Unicode
-const PEZZI = {
+const PEZZI: Record<string, string> = {
     wK: '♔', wQ: '♕', wR: '♖', wB: '♗', wN: '♘', wP: '♙',
     bK: '♚', bQ: '♛', bR: '♜', bB: '♝', bN: '♞', bP: '♟',
 }
 
-function Scacchiera({ fen }) {
+function Scacchiera({ fen }: ScacchieraProps) {
     const chess = new Chess(fen)
     const board = chess.board() // array 8x8 di pezzi
 
